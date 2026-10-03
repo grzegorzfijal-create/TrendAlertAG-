@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grzegorz Fijał</title>
+<meta name="description" content="Grzegorz Fijał – Senior Brand Manager FMCG. Rozwój marek, nowych kategorii i innowacji produktowych.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: graphite studio backdrop (matches the portrait), sticky nav, split hero, results "shelf", vertical career timeline, quiet grids below. */
+:root {
+  --bg: #eceef1;
+  --surface: #ffffff;
+  --ink: #17191d;
+  --muted: #5c6370;
+  --line: #d3d7de;
+  --accent: #2f4fb8;
+  --accent-soft: #dfe5f8;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Instrument Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --maxw: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1c1f; --surface: #232529; --ink: #eef0f3; --muted: #a0a6b1;
+    --line: #34373d; --accent: #93a9ff; --accent-soft: #283152; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1c1f; --surface: #232529; --ink: #eef0f3; --muted: #a0a6b1;
+  --line: #34373d; --accent: #93a9ff; --accent-soft: #283152; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+.label {
+  font-family: var(--mono); font-size: .75rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* Nav */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.1rem; text-decoration: none; letter-spacing: -.01em; }
+.brand span { color: var(--accent); }
+.nav ul { display: flex; gap: clamp(12px, 2.4vw, 28px); list-style: none; margin: 0; padding: 0; }
+.nav ul a { text-decoration: none; font-size: .9rem; color: var(--muted); }
+.nav ul a:hover { color: var(--ink); }
+@media (max-width: 720px) { .nav ul { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(40px, 7vw, 88px) clamp(32px, 5vw, 56px); }
+.hero .wrap { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.hero-text { min-width: 0; display: grid; gap: 22px; }
+.status {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+  font-size: .85rem; color: var(--muted); border: 1px solid var(--line);
+  padding: 6px 12px; border-radius: 999px; background: var(--surface);
+}
+.status i { width: 8px; height: 8px; border-radius: 50%; background: #2fa36b; box-shadow: 0 0 0 4px color-mix(in srgb, #2fa36b 22%, transparent); }
+.hero h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.3rem); font-weight: 800; line-height: .95; letter-spacing: -.035em;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: var(--muted); max-width: 34em; margin: 0; }
+.lede strong { color: var(--ink); font-weight: 600; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px;
+  font: 600 .95rem var(--body); text-decoration: none; cursor: pointer; border: 1px solid var(--ink);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn:hover { transform: translateY(-2px); }
+.portrait { position: relative; min-width: 0; }
+.portrait img {
+  display: block; width: 100%; max-width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 20px; background: #3a3b3f;
+}
+.portrait figcaption {
+  position: absolute; left: 16px; bottom: 16px; right: 16px;
+  display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; color: #f1f2f4;
+}
+.portrait figcaption span { background: rgba(20,21,24,.62); padding: 5px 10px; border-radius: 6px; backdrop-filter: blur(4px); }
+@media (max-width: 820px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .portrait { max-width: 420px; }
+}
+
+/* Shelf of chains */
+.shelf { border-block: 1px solid var(--line); background: var(--surface); overflow: hidden; }
+.shelf-inner { display: flex; align-items: center; gap: 24px; padding-block: 16px; }
+.shelf .label { flex-shrink: 0; }
+@media (max-width: 560px) { .shelf .label { display: none; } }
+.marquee { overflow: hidden; flex: 1; min-width: 0; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.track { display: flex; gap: 40px; width: max-content; animation: slide 38s linear infinite; }
+.track span { font-family: var(--display); font-weight: 600; font-size: 1.15rem; color: var(--muted); white-space: nowrap; }
+@keyframes slide { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; flex-wrap: wrap; width: auto; }
+  .track [aria-hidden] { display: none; }
+  html { scroll-behavior: auto; }
+  .btn:hover { transform: none; }
+}
+
+/* Sections */
+section.block { padding-block: clamp(56px, 8vw, 96px); }
+.head { display: grid; gap: 10px; margin-bottom: clamp(28px, 4vw, 44px); max-width: 44rem; }
+.head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.05; }
+.head p { color: var(--muted); margin: 0; }
+
+/* Results */
+.results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.result { background: var(--surface); padding: 26px 22px; display: grid; gap: 8px; align-content: start; }
+.result b {
+  font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: -.03em; line-height: 1; font-variant-numeric: tabular-nums;
+}
+.result b small { font-size: .5em; color: var(--accent); margin-inline: .12em; }
+.result p { margin: 0; color: var(--muted); font-size: .92rem; }
+.result .label { font-size: .68rem; }
+@media (max-width: 860px) { .results { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .results { grid-template-columns: 1fr; } }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.job { display: grid; grid-template-columns: 180px 1fr; gap: clamp(16px, 4vw, 48px); padding-block: 30px; border-top: 1px solid var(--line); }
+.job:last-child { border-bottom: 1px solid var(--line); }
+.when { font-family: var(--mono); font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; display: grid; gap: 6px; align-content: start; }
+.when .now { color: var(--accent); font-weight: 500; }
+.job-body { min-width: 0; display: grid; gap: 12px; }
+.job h3 { font-size: 1.45rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.2; }
+.job h3 .co-sector { display: block; font-family: var(--body); font-size: .9rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 4px; }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .9rem; }
+.role { background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+.arrow { color: var(--muted); font-family: var(--mono); font-size: .8rem; }
+.job ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 46rem; }
+.job li::marker { color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: var(--mono); font-size: .72rem; border: 1px solid var(--line); padding: 3px 8px; border-radius: 5px; color: var(--muted); }
+details.more summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .9rem; list-style: none; }
+details.more summary::-webkit-details-marker { display: none; }
+details.more summary::before { content: "+ "; font-family: var(--mono); }
+details.more[open] summary::before { content: "− "; }
+details.more ul { margin-top: 10px; }
+@media (max-width: 680px) { .job { grid-template-columns: 1fr; gap: 10px; } }
+
+/* Competencies */
+.alt { background: var(--surface); border-block: 1px solid var(--line); }
+.comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 36px); }
+.comp { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 2px solid var(--ink); min-width: 0; }
+.comp h3 { font-size: 1.15rem; font-weight: 700; }
+.comp p { margin: 0; color: var(--muted); font-size: .95rem; }
+@media (max-width: 860px) { .comp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .comp-grid { grid-template-columns: 1fr; } }
+
+/* Tools + education */
+.split { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 72px); }
+.split > div { min-width: 0; }
+.toolset { display: grid; gap: 22px; }
+.toolset h3 { font-family: var(--mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--bg); border: 1px solid var(--line); padding: 7px 13px; border-radius: 999px; font-size: .9rem; font-weight: 500; }
+.edu { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.edu li { display: grid; gap: 2px; padding-left: 18px; border-left: 2px solid var(--line); }
+.edu b { font-family: var(--display); font-size: 1.1rem; font-weight: 700; }
+.edu span { color: var(--muted); font-size: .92rem; }
+@media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact { padding-block: clamp(64px, 9vw, 110px); }
+.contact-card {
+  background: var(--ink); color: var(--bg); border-radius: 24px;
+  padding: clamp(28px, 6vw, 64px); display: grid; gap: 24px;
+}
+.contact-card h2 { font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -.03em; line-height: 1; max-width: 16em; }
+.contact-card p { margin: 0; opacity: .75; max-width: 36rem; }
+.contact-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.mail {
+  font-family: var(--mono); font-size: clamp(.95rem, 2.4vw, 1.15rem); padding: 12px 16px;
+  border: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); border-radius: 10px;
+  user-select: all; overflow-wrap: anywhere;
+}
+.contact-card .btn { border-color: var(--bg); }
+.contact-card .btn-primary { background: var(--bg); color: var(--ink); }
+.contact-card .btn-ghost { color: var(--bg); border-color: color-mix(in srgb, var(--bg) 30%, transparent); }
+footer { padding-block: 0 40px; color: var(--muted); font-size: .85rem; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Główna nawigacja">
+  <div class="wrap">
+    <a class="brand" href="#top">Grzegorz Fijał<span>.</span></a>
+    <ul>
+      <li><a href="#wyniki">Wyniki</a></li>
+      <li><a href="#doswiadczenie">Doświadczenie</a></li>
+      <li><a href="#kompetencje">Kompetencje</a></li>
+      <li><a href="#narzedzia">Narzędzia</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="status"><i></i>Senior Brand Manager · Warszawa</span>
+      <h1>Buduję marki,<br>które trafiają<br><em>na półkę.</em></h1>
+      <p class="lede">Lider marketingu FMCG z ponad <strong>10-letnim doświadczeniem</strong> w rozwoju nowych kategorii, budowaniu marek i zarządzaniu pipeline'em innowacji. Łączę insighty konsumenckie, dane i AI, żeby szybciej przechodzić od pomysłu do produktu na półce.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#kontakt">Porozmawiajmy →</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/grzegorz-fija%C5%82-7323b083/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="photo.webp" alt="Grzegorz Fijał" width="720" height="720">
+      <figcaption><span>OSHEE · Olimp · XL Energy</span><span>FMCG / Drinks</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="shelf" aria-label="Sieci handlowe, w których zbudowałem dystrybucję">
+  <div class="wrap shelf-inner">
+    <span class="label">Dystrybucja zbudowana w</span>
+    <div class="marquee">
+      <div class="track">
+        <span>Dino</span><span>Carrefour</span><span>ALDI</span><span>Lewiatan</span><span>Netto</span><span>POLOmarket</span><span>Spar</span><span>Intermarché</span>
+        <span aria-hidden="true">Dino</span><span aria-hidden="true">Carrefour</span><span aria-hidden="true">ALDI</span><span aria-hidden="true">Lewiatan</span><span aria-hidden="true">Netto</span><span aria-hidden="true">POLOmarket</span><span aria-hidden="true">Spar</span><span aria-hidden="true">Intermarché</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="block" id="wyniki">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Wyniki</span>
+        <h2>Liczby, za które odpowiadałem</h2>
+      </div>
+      <div class="results">
+        <div class="result"><span class="label">XL Energy · portfolio</span><b>1<small>→</small>15</b><p>SKU w portfolio marki i wejście w nowe kategorie</p></div>
+        <div class="result"><span class="label">NEO-VINCI · przychody</span><b>+87%</b><p>wzrostu przychodów po połączeniu brand buildingu z performance marketingiem</p></div>
+        <div class="result"><span class="label">NEO-VINCI · retencja</span><b>−35%</b><p>churnu dzięki optymalizacji customer journey i UX</p></div>
+        <div class="result"><span class="label">XL Energy · zespół</span><b>1<small>→</small>6</b><p>osób w zespole marketingu zbudowanym od podstaw</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="doswiadczenie" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Doświadczenie</span>
+        <h2>Od salonu Hondy do strategii marek napojów</h2>
+        <p>Pięć firm, trzy awanse i jedna stała: marketing, który przekłada się na sprzedaż.</p>
+      </div>
+      <ol class="timeline" reversed>
+        <li class="job">
+          <div class="when"><span class="now">04.2024 – obecnie</span><span>Warszawa</span></div>
+          <div class="job-body">
+            <h3>XL Energy Marketing<span class="co-sector">Drinks &amp; Beverages</span></h3>
+            <div class="roles"><span class="role">Brand Manager</span><span class="arrow">04.2025 awans →</span><span class="role">Senior Brand Manager</span></div>
+            <ul>
+              <li>Odpowiedzialność za NPD marki: rozszerzenie portfolio z 1 do 15 SKU i rozwój nowych kategorii.</li>
+              <li>Zintegrowana strategia komunikacji, która szybko zbudowała świadomość marki i otworzyła dystrybucję w dużych sieciach handlowych.</li>
+              <li>Budowa zespołu marketingu z 1 do 6 osób; współpraca z R&amp;D, sprzedażą i retailem.</li>
+            </ul>
+            <details class="more"><summary>Więcej</summary>
+              <ul>
+                <li>Strategiczna roadmapa portfolio i identyfikacja szans wzrostu na podstawie analiz rynkowych.</li>
+                <li>Badania konsumenckie (Nielsen, GfK) przekładane na strategię produktową.</li>
+                <li>Business case'y i analizy finansowe; alokacja budżetu i optymalizacja ROI.</li>
+                <li>Koordynacja projektów NPD z dowiezieniem w terminie (OTIF) i monitoringiem KPI.</li>
+              </ul>
+            </details>
+            <div class="tags"><span class="tag">NPD</span><span class="tag">P&amp;L</span><span class="tag">Nielsen</span><span class="tag">GfK</span><span class="tag">OTIF</span></div>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>10.2019 – 03.2024</span></div>
+          <div class="job-body">
+            <h3>NEO-VINCI<span class="co-sector">Inkubacja startupów · 5+ marek w portfolio</span></h3>
+            <div class="roles"><span class="role">Marketing &amp; Sales Manager</span><span class="arrow">09.2022 awans →</span><span class="role">Head of Strategy &amp; New Business</span></div>
+            <ul>
+              <li>Strategia marketingowa i rozwój biznesu dla ponad 5 marek z portfolio.</li>
+              <li>Model łączący brand building z performance marketingiem: +87% przychodów.</li>
+              <li>Spadek churnu o 35% dzięki optymalizacji customer journey i doświadczenia użytkownika.</li>
+            </ul>
+            <details class="more"><summary>Więcej</summary>
+              <ul>
+                <li>Podejście data-driven: analityka i insighty konsumenckie do wyszukiwania nowych źródeł wzrostu.</li>
+                <li>Wzmocnienie komunikacji i pozycjonowania marek, wyższa skuteczność sprzedaży i jakość leadów.</li>
+                <li>Zarządzanie budżetem marketingowym i alokacją inwestycji pod zwrot z wydatków.</li>
+                <li>Strategie marketingowe od zera dla marek w fazie pre-launch i wzrostu: pozycjonowanie, messaging, walidacja market-fit.</li>
+              </ul>
+            </details>
+            <div class="tags"><span class="tag">Growth</span><span class="tag">Performance</span><span class="tag">Go-to-market</span><span class="tag">CX</span></div>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>12.2017 – 10.2019</span></div>
+          <div class="job-body">
+            <h3>OSHEE World<span class="co-sector">Drinks &amp; Beverages</span></h3>
+            <div class="roles"><span class="role">Brand Manager</span></div>
+            <ul>
+              <li>Jedna z wiodących marek FMCG w Polsce; dwucyfrowy wzrost w kluczowych kategoriach (energy, izotoniki).</li>
+              <li>Współtworzenie strategii marki i pozycjonowania w segmencie sportu i aktywnego stylu życia.</li>
+              <li>Kampanie z czołowymi sportowcami i ambasadorami, zwiększające widoczność i zaangażowanie.</li>
+            </ul>
+            <details class="more"><summary>Więcej</summary>
+              <ul>
+                <li>Zintegrowane działania we wszystkich punktach styku: digital, kampanie, produkt, retail.</li>
+                <li>Wsparcie rozwoju portfolio i wprowadzeń nowych produktów zgodnych z trendami kategorii.</li>
+                <li>Współpraca ze sprzedażą i partnerami handlowymi: dystrybucja, widoczność, egzekucja w sklepie.</li>
+                <li>Analiza danych rynkowych i insightów w celu optymalizacji skuteczności marketingu.</li>
+              </ul>
+            </details>
+            <div class="tags"><span class="tag">Energy</span><span class="tag">Isotonic</span><span class="tag">Ambasadorzy</span><span class="tag">Trade marketing</span></div>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>12.2015 – 08.2017</span></div>
+          <div class="job-body">
+            <h3>Olimp Laboratories<span class="co-sector">Medical &amp; Sports Nutrition</span></h3>
+            <div class="roles"><span class="role">Marketing Specialist / Brand Manager</span></div>
+            <ul>
+              <li>Projekty z Joanną Jędrzejczyk, Robertem Kubicą i Mariuszem Pudzianowskim, budujące wiarygodność marki.</li>
+              <li>Zintegrowane kampanie w digitalu i retailu ze spójną komunikacją marki.</li>
+              <li>Wsparcie wprowadzeń produktów, widoczności w sklepach i sell-outu.</li>
+            </ul>
+            <div class="tags"><span class="tag">Sports nutrition</span><span class="tag">Influencer</span><span class="tag">Retail</span></div>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>08.2012 – 12.2015</span></div>
+          <div class="job-body">
+            <h3>Honda Plaza<span class="co-sector">Dealer samochodów i motocykli Honda</span></h3>
+            <div class="roles"><span class="role">Sales Advisor / Marketing Assistant</span></div>
+            <ul>
+              <li>Marketing salonu: planowanie kampanii i zakup mediów w kanałach cyfrowych i tradycyjnych.</li>
+              <li>Budowa obecności w social media i strategii digital; eventy i akcje promocyjne wspierające sprzedaż.</li>
+            </ul>
+            <div class="tags"><span class="tag">Media buying</span><span class="tag">Social media</span><span class="tag">Sprzedaż</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block alt" id="kompetencje">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Kompetencje</span>
+        <h2>Pełny cykl marki: od insightu do półki</h2>
+      </div>
+      <div class="comp-grid">
+        <div class="comp"><h3>Innowacje i rozwój kategorii</h3><p>Pełny cykl NPD od koncepcji do wprowadzenia na rynek. Roadmapy portfolio i strategia kategorii.</p></div>
+        <div class="comp"><h3>Strategia i pozycjonowanie marki</h3><p>Budowanie wartości marki na bazie insightów, wsparte analityką i danymi.</p></div>
+        <div class="comp"><h3>Consumer insights i badania</h3><p>Analiza zachowań konsumentów i przekładanie insightów na konkretne działania.</p></div>
+        <div class="comp"><h3>KPI i finanse</h3><p>Odpowiedzialność za P&amp;L i budżet. Awareness, udział w rynku, penetracja, rotacja, marża, business case'y.</p></div>
+        <div class="comp"><h3>Dane, AI i automatyzacja</h3><p>Nielsen, Mintel, GfK, GA4, Search Console i panele reklamowe. AI we wnioskowaniu strategicznym i automatyzacji procesów.</p></div>
+        <div class="comp"><h3>Przywództwo i zespoły</h3><p>Budowanie, skalowanie i coaching zespołów. Metodyki pracy, procesy i narzędzia do współpracy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="narzedzia">
+    <div class="wrap split">
+      <div>
+        <div class="head"><span class="label">Narzędzia</span><h2>Na co dzień pracuję z</h2></div>
+        <div class="toolset">
+          <div><h3>Marketing i analityka</h3><div class="chips"><span class="chip">NielsenIQ</span><span class="chip">GfK</span><span class="chip">Mintel</span><span class="chip">Google Analytics 4</span><span class="chip">Google Search Console</span><span class="chip">Meta Business Suite</span><span class="chip">Brand24</span></div></div>
+          <div><h3>AI i automatyzacja</h3><div class="chips"><span class="chip">ChatGPT / OpenAI</span><span class="chip">Midjourney</span><span class="chip">AI marketing tools</span></div></div>
+          <div><h3>Sprzedaż i organizacja pracy</h3><div class="chips"><span class="chip">Salesforce</span><span class="chip">Pipedrive</span><span class="chip">Asana</span><span class="chip">GetResponse</span><span class="chip">Canva</span></div></div>
+          <div><h3>Języki</h3><div class="chips"><span class="chip">Polski · ojczysty</span><span class="chip">Angielski · C1</span></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="head"><span class="label">Edukacja</span><h2>Wykształcenie</h2></div>
+        <ul class="edu">
+          <li><b>Biznes Management</b><span>Szkoła Główna Handlowa w Warszawie · studia podyplomowe, 2022</span></li>
+          <li><b>Ekonomia i Zarządzanie</b><span>Uczelnia Łazarskiego · specjalizacja Digital Marketing</span></li>
+          <li><b>Stosunki Międzynarodowe</b><span>Uniwersytet Warszawski</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="contact-card">
+        <span class="label" style="color:inherit;opacity:.6">Kontakt</span>
+        <h2>Szukasz kogoś, kto wprowadzi Twoją markę na półkę?</h2>
+        <p>Chętnie porozmawiam o rolach w brand managemencie, rozwoju kategorii i innowacjach w FMCG.</p>
+        <div class="contact-row">
+          <span class="mail" id="mail">grzegorz.fijal@gmail.com</span>
+          <button class="btn btn-primary" id="copy" type="button">Kopiuj adres</button>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/grzegorz-fija%C5%82-7323b083/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Grzegorz Fijał</span><span>Warszawa, Polska</span></div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var btn = this, mail = document.getElementById('mail');
+  function done(t) { btn.textContent = t; setTimeout(function () { btn.textContent = 'Kopiuj adres'; }, 2000); }
+  function selectText() {
+    var r = document.createRange(); r.selectNodeContents(mail);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    done('Zaznaczono – skopiuj Ctrl+C');
+  }
+  try {
+    navigator.clipboard.writeText(mail.textContent).then(function () { done('Skopiowano'); }, selectText);
+  } catch (e) { selectText(); }
+});
+</script>
+</body>
+</html>
