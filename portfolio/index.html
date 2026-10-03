@@ -146,6 +146,43 @@ section.block { padding-block: clamp(56px, 8vw, 96px); }
 @media (max-width: 860px) { .results { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 440px) { .results { grid-template-columns: 1fr; } }
 
+/* Brand cases: each panel carries its brand's own color world (fixed colors, readable in both themes) */
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.case { position: relative; overflow: hidden; border-radius: 20px; padding: clamp(22px, 3.5vw, 36px); display: grid; gap: 14px; align-content: start; color: #fff; min-width: 0; }
+.case .label { color: rgba(255,255,255,.72); }
+.case h3 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.case p { margin: 0; max-width: 34rem; color: rgba(255,255,255,.86); }
+.case .facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.case .facts span { font-family: var(--mono); font-size: .74rem; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); }
+.case-blast { grid-column: 1 / -1; background: radial-gradient(120% 140% at 100% 0%, #3a1f6e 0%, #16112a 55%, #0d0b18 100%); grid-template-columns: minmax(0, 1.1fr) auto; align-items: center; column-gap: clamp(24px, 4vw, 56px); }
+.case-blast > div:first-child { display: grid; gap: 14px; min-width: 0; }
+.cans { display: flex; gap: clamp(8px, 1.5vw, 16px); align-items: flex-end; }
+.can { --c1: #9fb3c8; --c2: #4a5d73; width: clamp(48px, 6vw, 66px); aspect-ratio: 1 / 2.1; border-radius: 10px 10px 12px 12px; position: relative;
+  background: linear-gradient(90deg, rgba(0,0,0,.28), rgba(255,255,255,.18) 30%, rgba(0,0,0,.05) 55%, rgba(0,0,0,.3)), linear-gradient(170deg, var(--c1), var(--c2));
+  box-shadow: 0 14px 30px rgba(0,0,0,.4); display: grid; place-items: center; transition: transform .25s ease; }
+.can::before { content: ""; position: absolute; top: -5px; left: 10%; right: 10%; height: 8px; border-radius: 6px 6px 2px 2px; background: linear-gradient(90deg, #8d939b, #e6e9ed, #8d939b); }
+.can b { writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--display); font-weight: 800; font-size: clamp(.8rem, 1.2vw, .95rem); letter-spacing: .08em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.35); }
+.can:hover { transform: translateY(-6px) rotate(-3deg); }
+.can-classic { --c1: #b9c6d6; --c2: #33435a; }
+.can-melon { --c1: #ff5f7e; --c2: #2f9a4c; }
+.can-mango { --c1: #ffc53d; --c2: #ff7a1a; }
+.can-cactus { --c1: #7fd36b; --c2: #c2367e; }
+.case-oshee { background: linear-gradient(150deg, #19a3e0 0%, #0a63b0 60%, #083f7a 100%); }
+.case-olimp { background: linear-gradient(160deg, #e1251b 0%, #a3120d 55%, #1a0a0a 100%); }
+.athletes { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.athletes li { font-family: var(--display); font-weight: 700; font-size: clamp(1.05rem, 2vw, 1.3rem); letter-spacing: -.01em; }
+.athletes li small { font-family: var(--body); font-weight: 400; font-size: .8rem; opacity: .75; margin-left: 6px; }
+.case-neo { grid-column: 1 / -1; background: var(--surface); color: var(--ink); border: 1px solid var(--line); grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 28px; }
+.case-neo .label { color: var(--muted); }
+.case-neo h3 { font-size: 1.4rem; }
+.case-neo p { color: var(--muted); }
+.case-neo .facts span { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+@media (max-width: 760px) {
+  .cases { grid-template-columns: minmax(0, 1fr); }
+  .case-blast, .case-neo { grid-template-columns: minmax(0, 1fr); row-gap: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .can:hover { transform: none; } }
+
 /* Timeline */
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; }
 .job { display: grid; grid-template-columns: 180px 1fr; gap: clamp(16px, 4vw, 48px); padding-block: 30px; border-top: 1px solid var(--line); }
@@ -219,6 +256,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <a class="brand" href="#top">Grzegorz Fijał<span>.</span></a>
     <ul>
       <li><a href="#wyniki">Wyniki</a></li>
+      <li><a href="#marki-case">Marki</a></li>
       <li><a href="#doswiadczenie">Doświadczenie</a></li>
       <li><a href="#kompetencje">Kompetencje</a></li>
       <li><a href="#narzedzia">Narzędzia</a></li>
@@ -291,6 +329,55 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <div class="result"><span class="label">NEO-VINCI · przychody</span><b>+87%</b><p>wzrostu przychodów po połączeniu brand buildingu z performance marketingiem</p></div>
         <div class="result"><span class="label">NEO-VINCI · retencja</span><b>−35%</b><p>churnu dzięki optymalizacji customer journey i UX</p></div>
         <div class="result"><span class="label">XL Energy · zespół</span><b>1<small>→</small>6</b><p>osób w zespole marketingu zbudowanym od podstaw</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="marki-case" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Marki</span>
+        <h2>Marki, które prowadziłem</h2>
+        <p>Napoje energetyczne, izotoniki, odżywki dla sportowców i startupy. Każda z tych marek wymagała innego języka, innej półki i innego kupca.</p>
+      </div>
+      <div class="cases">
+        <article class="case case-blast">
+          <div>
+            <span class="label">XL Energy Marketing · 2024 – obecnie</span>
+            <h3>Energy Blast</h3>
+            <p>Energetyk dla pokolenia Z: 20% prawdziwego soku owocowego i w 100% wegańskie składniki. Prowadzę NPD marki, rozwój portfolio i komunikację, która przekonuje kupców sieci.</p>
+            <div class="facts"><span>1 → 15 SKU</span><span>Gen Z</span><span>20% soku</span><span>100% vegan</span></div>
+          </div>
+          <figure class="cans" aria-label="Wybrane smaki Energy Blast: Classic, Arbuz, Mango-Ananas, Kaktus" style="margin:0">
+            <div class="can can-classic"><b>Classic</b></div>
+            <div class="can can-melon"><b>Arbuz</b></div>
+            <div class="can can-mango"><b>Mango</b></div>
+            <div class="can can-cactus"><b>Kaktus</b></div>
+          </figure>
+        </article>
+        <article class="case case-oshee">
+          <span class="label">OSHEE World · 2017 – 2019</span>
+          <h3>OSHEE</h3>
+          <p>Lider polskiego rynku izotoników i wód witaminowych, marka dla ludzi aktywnych. Współtworzyłem strategię marki w segmencie sportu i aktywnego stylu życia oraz kampanie z ambasadorami.</p>
+          <div class="facts"><span>Izotoniki</span><span>Energy</span><span>Dwucyfrowy wzrost</span></div>
+        </article>
+        <article class="case case-olimp">
+          <span class="label">Olimp Laboratories · 2015 – 2017</span>
+          <h3>Olimp Sport Nutrition</h3>
+          <p>Odżywki i suplementy dla sportowców. Projekty z mistrzami, którzy budowali wiarygodność marki:</p>
+          <ul class="athletes">
+            <li>Joanna Jędrzejczyk<small>MMA</small></li>
+            <li>Robert Kubica<small>motorsport</small></li>
+            <li>Mariusz Pudzianowski<small>strongman · MMA</small></li>
+          </ul>
+        </article>
+        <article class="case case-neo">
+          <div><span class="label">NEO-VINCI · 2019 – 2024</span><h3>Inkubacja startupów</h3></div>
+          <div style="display:grid;gap:10px;min-width:0">
+            <p>Strategia od zera dla ponad 5 marek w fazie pre-launchu i wzrostu: pozycjonowanie, messaging i walidacja market-fit.</p>
+            <div class="facts"><span>+87% przychodów</span><span>−35% churnu</span><span>5+ marek</span></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
